@@ -1,0 +1,263 @@
+.contenedorPokemones {
+  border-radius: 5%;
+}
+
+.linkDetalles {
+  text-decoration: none;
+}
+
+#tarjetATK {
+  list-style: none;
+  border: 2px solid;
+  border-radius: 9px;
+  background-color: #ffffff;
+}
+
+#tarjetaId {
+  grid-area: id;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.tarjetaImg {
+  grid-area: foto;
+  width: 50%;
+}
+
+#tarjetaNombre {
+  grid-area: nombre;
+  margin: 0;
+  border-radius: 0 0 6px 6px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+li:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 100ms ease;
+}
+
+li:hover .tarjetaImg {
+  transform: rotate(3deg) scale(1.2);
+  transition: all 400ms ease;
+}
+
+.Rock {
+  color: #b69e31;
+}
+.Rock_id {
+  color: #b69e31;
+}
+.Rock_background {
+  background-color: #b69e31;
+  border: 2px solid #b69e31;
+  color: white;
+}
+
+.Ghost {
+  color: #70559b;
+}
+.Ghost_id {
+  color: #70559b;
+}
+.Ghost_background {
+  background-color: #70559b;
+  border: 2px solid #70559b;
+  color: white;
+}
+
+.Steel {
+  color: #b7b9d0;
+}
+.Steel_id {
+  color: #b7b9d0;
+}
+.Steel_background {
+  background-color: #b7b9d0;
+  border: 2px solid #b7b9d0;
+  color: white;
+}
+
+.Water {
+  color: #649eb6;
+}
+.Water_id {
+  color: #649eb6;
+}
+.Water_background {
+  background-color: #649eb6;
+  border: 2px solid #649eb6;
+  color: white;
+}
+
+.Grass {
+  color: #74cb48;
+}
+.Grass_id {
+  color: #74cb48;
+}
+.Grass_background {
+  background-color: #74cb48;
+  border: 2px solid #74cb48;
+  color: white;
+}
+
+.Psychic {
+  color: #fb5584;
+}
+.Psychic_id {
+  color: #fb5584;
+}
+.Psychic_background {
+  background-color: #fb5584;
+  border: 2px solid #fb5584;
+  color: white;
+}
+
+.Ice {
+  color: #9ad6df;
+}
+.Ice_id {
+  color: #9ad6df;
+}
+.Ice_background {
+  background-color: #9ad6df;
+  border: 2px solid #9ad6df;
+  color: white;
+}
+
+.Dark {
+  color: #75574c;
+}
+.Dark_id {
+  color: #75574c;
+}
+.Dark_background {
+  background-color: #75574c;
+  border: 2px solid #75574c;
+  color: white;
+}
+
+.Fairy {
+  color: #e69eac;
+}
+.Fairy_id {
+  color: #e69eac;
+}
+.Fairy_background {
+  background-color: #e69eac;
+  border: 2px solid #e69eac;
+  color: white;
+}
+
+.Normal {
+  color: #aaa67f;
+}
+.Normal_id {
+  color: #aaa67f;
+}
+.Normal_background {
+  background-color: #aaa67f;
+  border: 2px solid #aaa67f;
+  color: white;
+}
+
+.Fighting {
+  color: #c12239;
+}
+.Fighting_id {
+  color: #c12239;
+}
+.Fighting_background {
+  background-color: #c12239;
+  border: 2px solid #c12239;
+  color: white;
+}
+
+.Flying {
+  color: #a891ec;
+}
+.Flying_id {
+  color: #a891ec;
+}
+.Flying_background {
+  background-color: #a891ec;
+  border: 2px solid #a891ec;
+  color: white;
+}
+
+.Poison {
+  color: #a43e9e;
+}
+.Poison_id {
+  color: #a43e9e;
+}
+.Poison_background {
+  background-color: #a43e9e;
+  border: 2px solid #a43e9e;
+  color: white;
+}
+
+.Ground {
+  color: #dec16b;
+}
+.Ground_id {
+  color: #dec16b;
+}
+.Ground_background {
+  background-color: #dec16b;
+  border: 2px solid #dec16b;
+  color: white;
+}
+
+.Bug {
+  color: #a7b723;
+}
+.Bug_id {
+  color: #a7b723;
+}
+.Bug_background {
+  background-color: #a7b723;
+  border: 2px solid #a7b723;
+  color: white;
+}
+
+.Fire {
+  color: #f57d31;
+}
+.Fire_id {
+  color: #f57d31;
+}
+.Fire_background {
+  background-color: #f57d31;
+  border: 2px solid #f57d31;
+  color: white;
+}
+
+.Electric {
+  color: #f9cf30;
+}
+.Electric_id {
+  color: #f9cf30;
+}
+.Electric_background {
+  background-color: #f9cf30;
+  border: 2px solid #f9cf30;
+  color: white;
+}
+
+.Dragon {
+  color: #7037ff;
+}
+.Dragon_id {
+  color: #7037ff;
+}
+.Dragon_background {
+  background-color: #7037ff;
+  border: 2px solid #7037ff;
+  color: white;
+}

@@ -1,0 +1,152 @@
+.add-pokemon-form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 10vh auto;
+    background-color: white;
+    padding: 50px 0 100px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.background-Form {
+    margin: 0;
+    /* height: 100vh; */
+    width: 100vw;
+    background: burlywood;
+    position: absolute;
+    background-image: url(../../imagenes/Pokeball.png);
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-position-x: 90%;
+    background-position-y: 1%;
+    background-size: 300px;
+}
+#type-select{
+    height: 30px;
+    border: none;
+    border-radius: 0.0001px;
+    border-bottom: 1px solid;
+    outline: none;
+}
+#type-select:focus{
+    border: none;    
+}
+
+
+
+#spanType{
+    position: relative;
+    transform: translateX(-10px) translateY(-64px);
+        font-size: 12px;
+        color: #6493eb;
+
+}
+#spanImage{
+    position: relative;
+    transform: translateX(-10px) translateY(-32px);
+        font-size: 12px;
+        color: #6493eb;
+
+}
+
+
+
+
+
+#Rock {
+    background-color: #b69e31;
+}
+  
+#Ghost {
+    background-color: #70559b;
+}
+  
+  #Steel {
+    background-color: #b7b9d0;
+  }
+  
+  #Water {
+    background-color: #649eb6;
+  }
+  
+  #Grass {
+    background-color: #74cb48;
+  }
+  
+  #Psychic{
+    background-color: #fb5584;
+  }
+  
+  #Ice {
+    background-color: #9ad6df;
+  }
+  
+  #Dark {
+    background-color: #75574c;
+  }
+  
+  #Fairy {
+    background-color: #e69eac;
+  }
+  
+  #Normal {
+    background-color: #aaa67f;
+  }
+  
+  #Fighting {
+    background-color: #c12239;
+  }
+  
+  #Flying {
+    background-color: #a891ec;
+  }
+  
+  #Poison {
+    background-color: #a43e9e;
+  }
+  
+  #Ground {
+    background-color: #dec16b;
+  }
+  
+  #Bug{
+    background-color: #a7b723;
+  }
+  
+  #Fire {
+    background-color: #f57d31;
+  }
+  
+  #Electric {
+    background-color: #f9cf30;
+  }
+  
+  #Dragon {
+   background-color: #7037ff;
+  }
+
+
+  input[type="range"]{
+    position: relative;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    border-bottom: 0.1px;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track{
+    background-color: #e0e0e0;
+    height: 5px;
+    border-radius: 5px;
+    appearance: none;
+  }
+  input[type="range"]::-webkit-slider-thumb{
+    background: #649eb6;
+    width: 5px;
+    height: 15px;
+    margin: -4px 0 0 0;
+    border-radius: 10px;
+    appearance: none;
+  }
+  

@@ -1,0 +1,177 @@
+center{
+    text-align: center;
+}
+center>h1{
+    margin-top: 0;
+}
+
+
+
+.container h1{
+    margin-bottom: 45px;
+}
+
+.container .inputBox{
+    position: relative;
+    width: 220px;
+    height: 35px;
+    margin-bottom: 35px;
+}
+.container .inputBox:last-child{
+    margin-bottom: 0;
+}
+.container .inputBox input{
+    position: absolute;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #666666;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #212121;
+    font-weight: 300;
+}
+.container .inputBox span{
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.container .inputBox input:focus ~ span,
+.container .inputBox input:valid ~ span{
+    transform: translateX(-10px) translateY(-32px);
+    font-size: 12px;
+    color: #6493eb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.volverLogin {
+    display: flex;
+    position: absolute;
+    filter: invert(1) contrast(0);
+    padding: 12px 30px;
+}
+  
+ .backgroundForm{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: burlywood;
+    position: absolute;
+    background-image: url(../../imagenes/Pokeball.png);
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-position-x: 90%;
+    background-position-y: 1%;
+    background-size: 300px;
+  }
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 15vh auto;
+    background-color: white;
+    padding: 50px 0 100px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-form {
+    background-color: #6493eb;
+    border-radius: none;
+    width: 220px;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: none;
+    align-items: center;
+    position: relative;
+}
+
+.boton-form:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.8s ease;
+  }
+  .boton-form:hover:before {
+  width: 100%;
+  }
+
+.boton-centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nombre-correo-mensaje {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.nombre-correo {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 30px;
+}
+
+
+
+.input-largo {
+    width: 220px;
+    border-color: rgb(185, 185, 185);
+    border-radius: 5px;
+    margin: 5px 0 ;
+}
+
+.input-largo-msj {
+    width: 250px;
+    height: 64px;
+    border-color: rgb(185, 185, 185);
+    border-width: 1px;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+
+
+.linkRegistro{
+    display: flex;
+    align-items: center;
+}
+
+.linkRegistro > * {
+    padding: 0;
+}
+
+.pikachu{
+    width: 140px;
+    -webkit-box-reflect: below -25% linear-gradient(to bottom,rgba(0,0,0,0.0), rgba(0,0,0,0.1));
+}
