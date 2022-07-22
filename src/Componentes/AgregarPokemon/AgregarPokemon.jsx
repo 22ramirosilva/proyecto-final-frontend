@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Flecha from "../../imagenes/arrow-left.svg";
 import "./AgregarPokemon.css";
 
@@ -18,7 +18,7 @@ const AgregarPokemon = () => {
   const [satk, setSatk] = useState("");
   const [sdef, setSdef] = useState("");
   const [spd, setSpd] = useState("");
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const handleChangeName = (evento) => {
     setName(evento.target.value);
@@ -58,6 +58,45 @@ const AgregarPokemon = () => {
   };
   const handleChangeSPD = (evento) => {
     setSpd(evento.target.value);
+  };
+
+  const addPokemon = async (e) => {
+    e.preventDefault();
+    try {
+      const respuesta = await fetch("http://localhost:1234/pokemon", {
+        method: "POST",
+        body: JSON.stringify({
+          name,
+          description,
+          weight,
+          hp,
+          atk,
+          def,
+          image,
+          type,
+          moves,
+          height,
+          satk,
+          sdef,
+          spd,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!respuesta.ok) {
+        throw new Error("Error en el servidor");
+      }
+
+      const usuarioFetch = await respuesta.json();
+      localStorage.setItem("token", usuarioFetch.token);
+
+      // navigate("/pokedex", { replace: true });
+    } catch (error) {
+      console.log(error);
+      alert("Error");
+    }
   };
 
   return (
@@ -248,7 +287,7 @@ const AgregarPokemon = () => {
             </div>
             <div className="boton-centro">
               <button
-                // onClick={}
+                onClick={addPokemon}
                 id={type}
                 className="boton-form"
                 type="button"

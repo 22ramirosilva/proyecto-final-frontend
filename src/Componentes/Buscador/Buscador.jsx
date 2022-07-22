@@ -5,6 +5,8 @@ import Pokeball from "../../imagenes/Pokeball.png";
 import Arrow from "../../imagenes/Arrow.svg";
 import TarjetaPokemon from "../TarjetaPokemon/TarjetaPokemon";
 import LoadingCharmander from "../../imagenes/loadingPokedex.gif";
+import Mas from "../../imagenes/mas.png";
+import { Link } from "react-router-dom";
 
 const Buscador = () => {
   const [loading, setLoading] = useState(false);
@@ -106,7 +108,22 @@ const Buscador = () => {
           <img id="loading" src={LoadingCharmander} alt="Loading" />
         </div>
       ) : (
-        <ul>{mostrarPokemones()}</ul>
+        <ul>
+          <Link className="linkDetalles" to={"/agregar"}>
+            <li id="tarjetATK" className="border">
+              <div className="contenedorPokemones">
+                <p id="tarjetaIdMas">#</p>
+                <center>
+                  <img className="tarjetaMas" src={Mas} alt="mas" />
+                </center>
+                <p className="backgroundAgregar" id="tarjetaNombre">
+                  Agregar
+                </p>
+              </div>
+            </li>
+          </Link>
+          {mostrarPokemones()}
+        </ul>
       )}
     </div>
   );

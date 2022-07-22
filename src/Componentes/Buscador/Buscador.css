@@ -65,6 +65,31 @@ ul {
   margin: 0;
 }
 
+.backgroundAgregar{
+  background-color: #666666;
+  border: 2px solid #666666;
+  color: white;
+}
+.border{
+  color: #666666;
+}
+#tarjetaIdMas {
+  filter: invert(1);
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.tarjetaMas {
+  width: 50%;
+}
+.tarjetaMas:hover{
+  transform: scale(1.2);
+  transition: all 400ms ease;
+}
+
 
 
 .loading{
