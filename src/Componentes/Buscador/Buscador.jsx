@@ -14,7 +14,7 @@ const Buscador = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 500);
   }, []);
 
   const [ordenarPorId, setOrdenarPorId] = useState(true);
@@ -89,6 +89,7 @@ const Buscador = () => {
             <img className="fotologo" src={Pokeball} alt="logo" />
             <h1>Pokédex</h1>
           </div>
+
           <div onClick={ordenar} className="logostitulo">
             <h4>{ordenarPorId ? "#" : "A-Z"}</h4>
             <img src={Arrow} alt="flecha" />

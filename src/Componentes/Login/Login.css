@@ -175,3 +175,14 @@ form {
     width: 140px;
     -webkit-box-reflect: below -25% linear-gradient(to bottom,rgba(0,0,0,0.0), rgba(0,0,0,0.1));
 }
+
+
+
+@media (max-width: 445px) {
+    .contacto-form {        
+        width: 90%;
+        min-width: 250px;
+        
+    }
+    
+}

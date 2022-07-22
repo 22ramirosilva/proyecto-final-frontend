@@ -6,18 +6,19 @@ import "./AgregarPokemon.css";
 
 const AgregarPokemon = () => {
   const [name, setName] = useState("");
+  const [id, setId] = useState("");
   const [description, setDescription] = useState("");
   const [weight, setWeight] = useState("");
-  const [hp, setHp] = useState("");
-  const [atk, setAtk] = useState("");
-  const [def, setDef] = useState("");
+  const [HP, setHp] = useState("");
+  const [ATK, setAtk] = useState("");
+  const [DEF, setDef] = useState("");
   const [image, setImage] = useState("");
   const [type, setType] = useState("");
   const [moves, setMoves] = useState("");
   const [height, setHeight] = useState("");
-  const [satk, setSatk] = useState("");
-  const [sdef, setSdef] = useState("");
-  const [spd, setSpd] = useState("");
+  const [SATK, setSatk] = useState("");
+  const [SDEF, setSdef] = useState("");
+  const [SPD, setSpd] = useState("");
   // let navigate = useNavigate();
 
   const handleChangeName = (evento) => {
@@ -67,18 +68,19 @@ const AgregarPokemon = () => {
         method: "POST",
         body: JSON.stringify({
           name,
+          id: "900",
           description,
           weight,
-          hp,
-          atk,
-          def,
+          HP,
+          ATK,
+          DEF,
           image,
           type,
           moves,
           height,
-          satk,
-          sdef,
-          spd,
+          SATK,
+          SDEF,
+          SPD,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -156,7 +158,7 @@ const AgregarPokemon = () => {
                     max="200"
                     required
                   />
-                  <span>HP {hp}</span>
+                  <span>HP {HP}</span>
                 </div>
                 <div className="inputBox">
                   <input
@@ -168,7 +170,7 @@ const AgregarPokemon = () => {
                     max="200"
                     required
                   />
-                  <span>ATK {atk}</span>
+                  <span>ATK {ATK}</span>
                 </div>
                 <div className="inputBox">
                   <input
@@ -180,7 +182,7 @@ const AgregarPokemon = () => {
                     max="200"
                     required
                   />
-                  <span>DEF {def}</span>
+                  <span>DEF {DEF}</span>
                 </div>
 
                 <div className="inputBox">
@@ -257,7 +259,7 @@ const AgregarPokemon = () => {
                     max="200"
                     required
                   />
-                  <span>SATK {satk}</span>
+                  <span>SATK {SATK}</span>
                 </div>
                 <div className="inputBox">
                   <input
@@ -269,7 +271,7 @@ const AgregarPokemon = () => {
                     max="200"
                     required
                   />
-                  <span>SDEF {sdef}</span>
+                  <span>SDEF {SDEF}</span>
                 </div>
                 <div className="inputBox">
                   <input
@@ -281,7 +283,7 @@ const AgregarPokemon = () => {
                     max="200"
                     required
                   />
-                  <span>SPD {spd}</span>
+                  <span>SPD {SPD}</span>
                 </div>
               </div>
             </div>
