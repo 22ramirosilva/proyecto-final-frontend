@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Flecha from "../../imagenes/arrow-left.svg";
 import "./AgregarPokemon.css";
+import Peso from "../../imagenes/Weight.svg";
+import Alto from "../../imagenes/Height.svg";
 
 const AgregarPokemon = () => {
   const [name, setName] = useState("");
@@ -19,10 +21,13 @@ const AgregarPokemon = () => {
   const [SATK, setSatk] = useState("");
   const [SDEF, setSdef] = useState("");
   const [SPD, setSpd] = useState("");
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const handleChangeName = (evento) => {
     setName(evento.target.value);
+  };
+  const handleChangeId = (evento) => {
+    setId(evento.target.value);
   };
   const handleChangeDescription = (evento) => {
     setDescription(evento.target.value);
@@ -68,7 +73,7 @@ const AgregarPokemon = () => {
         method: "POST",
         body: JSON.stringify({
           name,
-          id: "900",
+          id,
           description,
           weight,
           HP,
@@ -94,7 +99,7 @@ const AgregarPokemon = () => {
       const usuarioFetch = await respuesta.json();
       localStorage.setItem("token", usuarioFetch.token);
 
-      // navigate("/pokedex", { replace: true });
+      navigate("/pokedex", { replace: true });
     } catch (error) {
       console.log(error);
       alert("Error");
@@ -146,6 +151,7 @@ const AgregarPokemon = () => {
                     required
                   />
                   <span>Weight</span>
+                  <img className="icono-add" src={Peso} alt="weight" />
                 </div>
 
                 <div className="inputBox">
@@ -187,10 +193,11 @@ const AgregarPokemon = () => {
 
                 <div className="inputBox">
                   <input
-                    style={{ width: "228%" }}
+                    // style={{ width: "228%" }}
                     onChange={handleChangeImage}
                     className="input-largo"
                     type="file"
+                    accept=".png, .jpg, .jpeg"
                     required
                   />
                   <span id="spanImage">Image</span>
@@ -247,6 +254,7 @@ const AgregarPokemon = () => {
                     required
                   />
                   <span>Height</span>
+                  <img className="icono-add" src={Alto} alt="alto" />
                 </div>
 
                 <div className="inputBox">
@@ -285,16 +293,26 @@ const AgregarPokemon = () => {
                   />
                   <span>SPD {SPD}</span>
                 </div>
+                <div className="inputBox">
+                  <input
+                    onChange={handleChangeId}
+                    className="input-largo"
+                    type="number"
+                    min={1}
+                    required
+                  />
+                  <span>ID</span>
+                </div>
               </div>
             </div>
             <div className="boton-centro">
               <button
                 onClick={addPokemon}
                 id={type}
-                className="boton-form"
+                className="boton-add"
                 type="button"
               >
-                ADD
+                <span>ADD</span>
               </button>
               <div className="linkRegistro"></div>
             </div>

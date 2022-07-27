@@ -4,13 +4,44 @@ import { Link } from "react-router-dom";
 import "../Login/Login.css";
 import { useNavigate } from "react-router-dom";
 import Flecha from "../../imagenes/arrow-left.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLock,
+  faEnvelope,
+  faUser,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Registro = () => {
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(faEyeSlash);
+  const [type2, setType2] = useState("password");
+  const [icon2, setIcon2] = useState(faEyeSlash);
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   let navigate = useNavigate();
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(faEye);
+      setType("text");
+    } else {
+      setIcon(faEyeSlash);
+      setType("password");
+    }
+  };
+  const handleToggle2 = () => {
+    if (type2 === "password") {
+      setIcon2(faEye);
+      setType2("text");
+    } else {
+      setIcon2(faEyeSlash);
+      setType2("password");
+    }
+  };
 
   const handleChangeName = (evento) => {
     setName(evento.target.value);
@@ -72,6 +103,7 @@ const Registro = () => {
                     required
                   />
                   <span>Name</span>
+                  <FontAwesomeIcon className="icon" icon={faUser} />
                 </div>
 
                 <div className="inputBox">
@@ -82,26 +114,37 @@ const Registro = () => {
                     required
                   />
                   <span>Email</span>
+                  <FontAwesomeIcon className="icon" icon={faEnvelope} />
                 </div>
 
                 <div className="inputBox">
                   <input
                     onChange={handleChangePass}
                     className="input-largo"
-                    type="password"
+                    type={type}
                     required
                   />
                   <span>Password</span>
+                  <FontAwesomeIcon
+                    onClick={handleToggle}
+                    className="icon"
+                    icon={icon}
+                  />
                 </div>
 
                 <div className="inputBox">
                   <input
                     onChange={handleChangeConfirmPass}
                     className="input-largo"
-                    type="password"
+                    type={type2}
                     required
                   />
                   <span>Confirm password</span>
+                  <FontAwesomeIcon
+                    onClick={handleToggle2}
+                    className="icon"
+                    icon={icon2}
+                  />
                 </div>
               </div>
             </div>
@@ -116,8 +159,8 @@ const Registro = () => {
               <div className="linkRegistro">
                 <h6>Already a user?</h6>
 
-                <Link to={"/"}>
-                  <p>Login</p>
+                <Link className="link" to={"/"}>
+                  <p className="enlace">Login</p>
                 </Link>
               </div>
             </div>

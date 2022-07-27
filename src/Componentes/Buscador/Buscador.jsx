@@ -14,7 +14,7 @@ const Buscador = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 1500);
   }, []);
 
   const [ordenarPorId, setOrdenarPorId] = useState(true);
@@ -46,9 +46,7 @@ const Buscador = () => {
 
   const filtrar = (evento) => {
     const listaDePokemones = pokemones.filter((pokemon) =>
-      pokemon.name.english
-        .toLowerCase()
-        .includes(evento.target.value.toLowerCase())
+      pokemon.name.toLowerCase().includes(evento.target.value.toLowerCase())
     );
     setlistaDePokemones(listaDePokemones);
   };
@@ -67,8 +65,8 @@ const Buscador = () => {
       setOrdenarPorId(true);
     } else {
       const listaOrdenada = pokemones.sort(function (a, b) {
-        let x = a.name.english.toLowerCase();
-        let y = b.name.english.toLowerCase();
+        let x = a.name.toLowerCase();
+        let y = b.name.toLowerCase();
         if (x < y) {
           return -1;
         }

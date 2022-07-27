@@ -7,6 +7,7 @@ import Login from "./Componentes/Login/Login";
 import Registro from "./Componentes/Registro/Registro";
 import ScrollToTop from "./Componentes/ScrollToTop/ScrollToTop";
 import AgregarPokemon from "./Componentes/AgregarPokemon/AgregarPokemon";
+import Error404 from "./Componentes/Error404/Error404";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/pokedex" element={<Buscador />} />
           <Route path="/agregar" element={<AgregarPokemon />} />
           <Route path="pokedex/detalles/:id" element={<Detalles />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </div>

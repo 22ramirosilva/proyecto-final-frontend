@@ -35,13 +35,13 @@ const Detalles = () => {
 
   return (
     pokemon.name && (
-      <div className={pokemon.type[0]} id="contenedorDetalles">
+      <div className={pokemon.types[0]} id="contenedorDetalles">
         <section className="arriba">
           <div className="flechaNombre">
             <Link className="volver" to="/pokedex">
               <img className="flechita" src={Flecha} alt="flecha" />
             </Link>
-            <h1>{pokemon.name.english}</h1>
+            <h1>{pokemon.name}</h1>
           </div>
           <h5>#{pokemon.id}</h5>
         </section>
@@ -54,9 +54,9 @@ const Detalles = () => {
               <img src={Frame} alt="flecha" />
             </Link>
           ) : (
-            <div></div>
+            <div className="flechitaLeft"></div>
           )}
-          <img className="fotoPokemon" src={pokemon.image.hires} alt="foto" />
+          <img className="fotoPokemon" src={pokemon.image} alt="foto" />
           {pokemon.next ? (
             <Link
               className="flechitaRight"
@@ -65,13 +65,13 @@ const Detalles = () => {
               <img src={Frame} alt="flecha" />
             </Link>
           ) : (
-            <div></div>
+            <div className="flechitaRight"></div>
           )}
         </div>
         <div></div>
         <section className="abajo">
           <p className="tipos">
-            {pokemon.type.map((type) => (
+            {pokemon.types.map((type) => (
               <span className={type.toLowerCase()}>{type}</span>
             ))}
           </p>
@@ -82,19 +82,19 @@ const Detalles = () => {
             <div className="centrado">
               <div className="parejas">
                 <img src={Peso} alt="peso" />
-                <p>{pokemon.profile.weight}</p>
+                <p>{pokemon.weight}</p>
               </div>
               <h6>Weight</h6>
             </div>
             <div className="borde centrado">
               <div className="parejas">
                 <img src={Alto} alt="alto" />
-                <p>{pokemon.profile.height}</p>
+                <p>{pokemon.height}</p>
               </div>
               <h6>Height</h6>
             </div>
             <div className="centrado">
-              <p>{pokemon.profile.ability[0]}</p>
+              <p>{pokemon.abilities[0] + " " + pokemon.abilities[1]}</p>
               <h6>Moves</h6>
             </div>
           </section>
@@ -105,7 +105,7 @@ const Detalles = () => {
               <div className="habilidades">
                 {Object.entries(pokemon.base).map(
                   ([nombreDeLaProp, valorDeLaProp]) => (
-                    <p>{nombreDeLaProp}</p>
+                    <p>{nombreDeLaProp.toUpperCase()}</p>
                   )
                 )}
               </div>
@@ -122,14 +122,14 @@ const Detalles = () => {
                     <div>
                       <div
                         id="progressValue"
-                        className={pokemon.type[0]}
+                        className={pokemon.types[0]}
                         style={{
                           width: `${valorDeLaProp / 2}%`,
                         }}
                       ></div>
                       <div
                         id="progressBar"
-                        className={pokemon.type[0]}
+                        className={pokemon.types[0]}
                         style={{
                           opacity: "0.1",
                           flex: "1",
@@ -141,8 +141,6 @@ const Detalles = () => {
               </div>
             </div>
           </section>
-
-          {/* <div>{Object.entries(pokemon.evolution)}</div> */}
         </section>
       </div>
     )

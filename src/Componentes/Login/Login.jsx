@@ -4,11 +4,29 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import Pikachu from "../../imagenes/pikachu.gif";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(faEyeSlash);
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(faEye);
+      setType("text");
+    } else {
+      setIcon(faEyeSlash);
+      setType("password");
+    }
+  };
 
   const handleChangeMail = (evento) => {
     setMail(evento.target.value);
@@ -59,17 +77,25 @@ const Login = () => {
                     type="email"
                     required
                   />
+
                   <span>Email</span>
+                  <FontAwesomeIcon className="icon" icon={faEnvelope} />
                 </div>
 
                 <div className="inputBox">
                   <input
                     onChange={handleChangePass}
                     className="input-largo"
-                    type="password"
+                    type={type}
                     required
                   />
                   <span>Password</span>
+
+                  <FontAwesomeIcon
+                    onClick={handleToggle}
+                    className="icon"
+                    icon={icon}
+                  />
                 </div>
               </div>
             </div>
@@ -88,8 +114,8 @@ const Login = () => {
               <div className="linkRegistro">
                 <h6>New User?</h6>
 
-                <Link to={"/registro"}>
-                  <p>Sign up</p>
+                <Link className="link" to={"/registro"}>
+                  <p className="enlace">Sign up</p>
                 </Link>
               </div>
             </div>
