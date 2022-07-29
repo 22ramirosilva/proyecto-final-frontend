@@ -119,6 +119,7 @@ form {
     align-items: center;
     position: relative;
     cursor: pointer;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 20%);
 }
 
 .boton-form:before {
@@ -198,5 +199,33 @@ form {
         min-width: 250px;
         
     }
-    
 }
+@media (max-width: 600px) {
+    .nombre-correo-mensaje {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        gap: 30px;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .container .inputBox input {
+        position: absolute;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #666666;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: #212121;
+        font-weight: 300;
+    }
+    .nombre-correo {
+        display: flex;
+        flex-direction: column;
+        margin: 0 ;
+    }
+}
+
+
+

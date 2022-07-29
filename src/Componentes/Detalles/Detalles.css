@@ -90,7 +90,7 @@
   background-color: white;
   margin: 10px auto;
   border-radius: 15px;
-  padding: 0 10% 10% 10%;
+  padding: 0 10% 5% 10%;
   max-width: 700px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
@@ -153,7 +153,22 @@ p {
   border-radius: 0 10px 10px 0;
 }
 
+.boton{
+  margin-top: 7%;
+}
 
+.boton:hover {
+  transition: all .4s ease;
+  animation: rotation1 1s infinite linear
+}
+
+@keyframes rotation1  {
+  0%   {transform: scale(1) rotate(0deg)}
+  25%  {transform: scale(1.2) rotate(10deg)}
+  50%  {transform: scale(1.1) rotate(0deg)}
+  75%  {transform: scale(1.2) rotate(-10deg)}
+  100%  {transform: scale(1) rotate(0deg)}
+}
 
 .valores {
   border-left: 1px solid #e0e0e0;

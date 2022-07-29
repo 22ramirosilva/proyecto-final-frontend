@@ -20,7 +20,7 @@ function App() {
           <Route path="/pokedex" element={<Buscador />} />
           <Route path="/agregar" element={<AgregarPokemon />} />
           <Route path="pokedex/detalles/:id" element={<Detalles />} />
-          <Route path="/*" element={<Error404 />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 import Flecha from "../../imagenes/arrow-left.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLock,
   faEnvelope,
   faUser,
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
 
 const Registro = () => {
   const [type, setType] = useState("password");
@@ -76,7 +76,13 @@ const Registro = () => {
       navigate("/", { replace: true });
     } catch (error) {
       console.log("No se pudo conectar con el backend");
-      alert("Mail o contraseña incorrecta");
+
+      Swal.fire({
+        title: "Error",
+        text: "Your email or password is invalid",
+        icon: "error",
+        confirmButtonColor: "#6493eb",
+      });
     }
   };
 
@@ -117,7 +123,7 @@ const Registro = () => {
                   <FontAwesomeIcon className="icon" icon={faEnvelope} />
                 </div>
 
-                <div className="inputBox">
+                <div className="inputBox tooltip">
                   <input
                     onChange={handleChangePass}
                     className="input-largo"

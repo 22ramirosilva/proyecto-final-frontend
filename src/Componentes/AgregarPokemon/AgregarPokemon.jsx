@@ -8,7 +8,7 @@ import Alto from "../../imagenes/Height.svg";
 
 const AgregarPokemon = () => {
   const [name, setName] = useState("");
-  const [id, setId] = useState("");
+  const [number, setNumber] = useState("");
   const [description, setDescription] = useState("");
   const [weight, setWeight] = useState("");
   const [HP, setHp] = useState("");
@@ -26,8 +26,8 @@ const AgregarPokemon = () => {
   const handleChangeName = (evento) => {
     setName(evento.target.value);
   };
-  const handleChangeId = (evento) => {
-    setId(evento.target.value);
+  const handleChangeNumber = (evento) => {
+    setNumber(evento.target.value);
   };
   const handleChangeDescription = (evento) => {
     setDescription(evento.target.value);
@@ -73,7 +73,7 @@ const AgregarPokemon = () => {
         method: "POST",
         body: JSON.stringify({
           name,
-          id,
+          number,
           description,
           weight,
           HP,
@@ -147,7 +147,8 @@ const AgregarPokemon = () => {
                   <input
                     onChange={handleChangeWeight}
                     className="input-largo"
-                    type="text"
+                    type="number"
+                    min={0}
                     required
                   />
                   <span>Weight</span>
@@ -196,11 +197,10 @@ const AgregarPokemon = () => {
                     // style={{ width: "228%" }}
                     onChange={handleChangeImage}
                     className="input-largo"
-                    type="file"
-                    accept=".png, .jpg, .jpeg"
+                    type="text"
                     required
                   />
-                  <span id="spanImage">Image</span>
+                  <span>Image URL</span>
                 </div>
               </div>
 
@@ -250,7 +250,8 @@ const AgregarPokemon = () => {
                   <input
                     onChange={handleChangeHeight}
                     className="input-largo"
-                    type="text"
+                    type="number"
+                    min={0}
                     required
                   />
                   <span>Height</span>
@@ -295,13 +296,13 @@ const AgregarPokemon = () => {
                 </div>
                 <div className="inputBox">
                   <input
-                    onChange={handleChangeId}
+                    onChange={handleChangeNumber}
                     className="input-largo"
                     type="number"
                     min={1}
                     required
                   />
-                  <span>ID</span>
+                  <span>#Number</span>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ const Buscador = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 2500);
   }, []);
 
   const [ordenarPorId, setOrdenarPorId] = useState(true);

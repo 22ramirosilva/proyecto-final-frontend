@@ -10,6 +10,7 @@ import {
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [type, setType] = useState("password");
@@ -53,10 +54,26 @@ const Login = () => {
       const usuarioFetch = await respuesta.json();
       localStorage.setItem("token", usuarioFetch.token);
 
+      Swal.fire({
+        title: "Welcome",
+        icon: "success",
+        confirmButtonColor: "#6493eb",
+        timer: "1500",
+        showConfirmButton: false,
+        timerProgressBar: true,
+        width: "20rem",
+        heightAuto: true,
+      });
       navigate("/pokedex", { replace: true });
     } catch (error) {
       console.log(error);
-      alert("El nombre de usuario o contraseña son incorrectos");
+
+      Swal.fire({
+        title: "Error",
+        text: "Your username or password is incorrect",
+        icon: "error",
+        confirmButtonColor: "#6493eb",
+      });
     }
   };
 

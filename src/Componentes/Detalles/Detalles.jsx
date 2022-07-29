@@ -3,31 +3,50 @@ import "./Detalles.css";
 import Flecha from "../../imagenes/arrow-left.svg";
 import Peso from "../../imagenes/Weight.svg";
 import Alto from "../../imagenes/Height.svg";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Frame from "../../imagenes/Frame.svg";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
 
 const Detalles = () => {
   const { id } = useParams();
 
   const [pokemon, setPokemon] = useState({});
+  let navigate = useNavigate();
 
   useEffect(() => {
-    cargarPokemones();
-  });
+    const cargarPokemones = async () => {
+      try {
+        const respuesta = await fetch(`http://localhost:1234/pokemon/${id}`);
 
-  const cargarPokemones = async () => {
+        if (!respuesta.ok) {
+          throw new Error("Error en el servidor");
+        }
+
+        const pokemonesFetch = await respuesta.json();
+        setPokemon(pokemonesFetch);
+      } catch (error) {
+        console.log("No se pudo conectar con el backend");
+        navigate("/404", { replace: true });
+      }
+    };
+    cargarPokemones();
+  }, [id, navigate]);
+
+  const borrarPokemones = async () => {
     try {
-      const respuesta = await fetch(`http://localhost:1234/pokemon/${id}`);
+      const respuesta = await fetch(
+        `http://localhost:1234/pokemon/${pokemon.id}`,
+        { method: "DELETE" },
+        navigate("/pokedex", { replace: true })
+      );
 
       if (!respuesta.ok) {
         throw new Error("Error en el servidor");
       }
-
-      const pokemonesFetch = await respuesta.json();
-
-      setPokemon(pokemonesFetch);
     } catch (error) {
       console.log("No se pudo conectar con el backend");
     }
@@ -43,7 +62,7 @@ const Detalles = () => {
             </Link>
             <h1>{pokemon.name}</h1>
           </div>
-          <h5>#{pokemon.id}</h5>
+          <h5>#{pokemon.number}</h5>
         </section>
         <div className="contenedorImgPokemon">
           {pokemon.prev ? (
@@ -82,19 +101,19 @@ const Detalles = () => {
             <div className="centrado">
               <div className="parejas">
                 <img src={Peso} alt="peso" />
-                <p>{pokemon.weight}</p>
+                <p>{pokemon.weight} kg</p>
               </div>
               <h6>Weight</h6>
             </div>
             <div className="borde centrado">
               <div className="parejas">
                 <img src={Alto} alt="alto" />
-                <p>{pokemon.height}</p>
+                <p>{pokemon.height} m</p>
               </div>
               <h6>Height</h6>
             </div>
             <div className="centrado">
-              <p>{pokemon.abilities[0] + " " + pokemon.abilities[1]}</p>
+              <p>{pokemon.abilities[0]}</p>
               <h6>Moves</h6>
             </div>
           </section>
@@ -141,6 +160,34 @@ const Detalles = () => {
               </div>
             </div>
           </section>
+          <div>
+            <FontAwesomeIcon
+              className="boton"
+              icon={faTrashCan}
+              onClick={() => {
+                Swal.fire({
+                  title: "Are you sure?",
+                  text: "Do you really want to delete this Pokémon?",
+                  icon: "warning",
+                  showCancelButton: true,
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Yes, delete it!",
+                  confirmButtonColor: "#6493eb",
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    borrarPokemones();
+                    Swal.fire({
+                      title: "Deleted!",
+                      text: "Your Pokémon has been deleted.",
+                      icon: "success",
+                      showConfirmButton: false,
+                      timer: "2000",
+                    });
+                  }
+                });
+              }}
+            />
+          </div>
         </section>
       </div>
     )
