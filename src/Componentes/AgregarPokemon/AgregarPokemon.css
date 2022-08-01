@@ -47,39 +47,6 @@
 
 }
 
-.boton-add {
-  background-color: #6493eb;
-  border-radius: none;
-  width: 220px;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  color: white;
-  border: none;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-
-}
-.boton-add:before {
-  content:"";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 0px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: all 1s ease;
-}
-.boton-add:hover:before {
-width: 100%;
-}
-.boton-add:focus{
-  width: 30px;
-  background-color: #44c88a;
-  border-radius: 50%;
-  
-}
 
 
 

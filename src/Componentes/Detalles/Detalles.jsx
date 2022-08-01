@@ -87,7 +87,7 @@ const Detalles = () => {
             <div className="flechitaRight"></div>
           )}
         </div>
-        <div></div>
+
         <section className="abajo">
           <p className="tipos">
             {pokemon.types.map((type) => (

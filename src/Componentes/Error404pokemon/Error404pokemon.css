@@ -1,0 +1,67 @@
+.error-container{
+    display: flex;
+    padding: 5% 0;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.sorry{
+    color: #c12239;
+    letter-spacing: 10px;
+}
+.text404{
+    font-size: 12rem;
+    color: #212121;
+    margin: 0;
+    text-align: center;
+}
+.pokeballError{
+    width: 9rem;
+    animation-name: example;
+    animation: rotation 3s infinite linear
+}
+@keyframes rotation  {
+    0%   {transform: rotate(0deg)}
+    25%  {transform: rotate(20deg)}
+    35%  {transform: rotate(12deg)}
+    50%  {transform: rotate(20deg)}
+    100%  {transform: rotate(0deg)}
+  }
+  
+  .sombra{
+      background: #e0e0e0;
+      height: 20px;
+      width: 340px;
+      border-radius: 100%;
+      transform: translateY(-50px);
+  }
+  
+.error-text{
+    text-align: center;
+    padding: 0;
+}
+
+
+
+    @media ( max-width: 389px) {
+
+        .text404{
+            font-size: 6rem;
+        }
+        .pokeballError{
+            width: 4.5rem;
+        }        
+        
+        .sombra{
+            height: 14px;
+            width: 170px;
+            transform: translateY(-25px);
+        }
+    }
+
+    @media ( max-width: 192px) {
+        .rojo{
+            display: none;
+        }
+    }

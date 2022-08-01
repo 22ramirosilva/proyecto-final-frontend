@@ -66,8 +66,6 @@ const Login = () => {
       });
       navigate("/pokedex", { replace: true });
     } catch (error) {
-      console.log(error);
-
       Swal.fire({
         title: "Error",
         text: "Your username or password is incorrect",

@@ -5,6 +5,7 @@ import Flecha from "../../imagenes/arrow-left.svg";
 import "./AgregarPokemon.css";
 import Peso from "../../imagenes/Weight.svg";
 import Alto from "../../imagenes/Height.svg";
+import Swal from "sweetalert2";
 
 const AgregarPokemon = () => {
   const [name, setName] = useState("");
@@ -99,10 +100,25 @@ const AgregarPokemon = () => {
       const usuarioFetch = await respuesta.json();
       localStorage.setItem("token", usuarioFetch.token);
 
+      Swal.fire({
+        title: "Pokémon added successfully",
+        icon: "success",
+        confirmButtonColor: "#6493eb",
+        timer: "1500",
+        showConfirmButton: false,
+        timerProgressBar: true,
+        width: "20rem",
+        heightAuto: true,
+      });
       navigate("/pokedex", { replace: true });
     } catch (error) {
       console.log(error);
-      alert("Error");
+      Swal.fire({
+        title: "Error",
+        text: "Enter all values ​​correctly",
+        icon: "error",
+        confirmButtonColor: "#6493eb",
+      });
     }
   };
 
@@ -147,7 +163,7 @@ const AgregarPokemon = () => {
                   <input
                     onChange={handleChangeWeight}
                     className="input-largo"
-                    type="number"
+                    type="double"
                     min={0}
                     required
                   />
@@ -250,7 +266,7 @@ const AgregarPokemon = () => {
                   <input
                     onChange={handleChangeHeight}
                     className="input-largo"
-                    type="number"
+                    type="double"
                     min={0}
                     required
                   />
@@ -310,7 +326,7 @@ const AgregarPokemon = () => {
               <button
                 onClick={addPokemon}
                 id={type}
-                className="boton-add"
+                className="boton-form"
                 type="button"
               >
                 <span>ADD</span>
