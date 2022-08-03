@@ -3,8 +3,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Flecha from "../../imagenes/arrow-left.svg";
 import "./AgregarPokemon.css";
-import Peso from "../../imagenes/Weight.svg";
-import Alto from "../../imagenes/Height.svg";
 import Swal from "sweetalert2";
 
 const AgregarPokemon = () => {
@@ -163,12 +161,13 @@ const AgregarPokemon = () => {
                   <input
                     onChange={handleChangeWeight}
                     className="input-largo"
-                    type="double"
-                    min={0}
+                    type="number"
+                    step="0.1"
+                    min={0.1}
                     required
                   />
                   <span>Weight</span>
-                  <img className="icono-add" src={Peso} alt="weight" />
+                  <p className="unidad">kg</p>
                 </div>
 
                 <div className="inputBox">
@@ -210,7 +209,6 @@ const AgregarPokemon = () => {
 
                 <div className="inputBox">
                   <input
-                    // style={{ width: "228%" }}
                     onChange={handleChangeImage}
                     className="input-largo"
                     type="text"
@@ -266,12 +264,13 @@ const AgregarPokemon = () => {
                   <input
                     onChange={handleChangeHeight}
                     className="input-largo"
-                    type="double"
-                    min={0}
+                    type="number"
+                    step="0.1"
+                    min={0.1}
                     required
                   />
                   <span>Height</span>
-                  <img className="icono-add" src={Alto} alt="alto" />
+                  <p className="unidad">m</p>
                 </div>
 
                 <div className="inputBox">

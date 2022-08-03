@@ -14,7 +14,7 @@ const Buscador = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 3000);
   }, []);
 
   const [ordenarPorId, setOrdenarPorId] = useState(true);
@@ -97,7 +97,7 @@ const Buscador = () => {
         <input
           className="iconoPlaceHolder"
           type="search"
-          placeholder="Buscar"
+          placeholder="Search"
           onChange={filtrar}
         />
       </nav>
@@ -116,7 +116,7 @@ const Buscador = () => {
                   <img className="tarjetaMas" src={Mas} alt="mas" />
                 </center>
                 <p className="backgroundAgregar" id="tarjetaNombre">
-                  Agregar
+                  ADD
                 </p>
               </div>
             </li>

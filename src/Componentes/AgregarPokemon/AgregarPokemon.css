@@ -11,7 +11,6 @@
 
 .background-Form {
     margin: 0;
-    /* height: 100vh; */
     width: 100%;
     background: burlywood;
     position: absolute;
@@ -33,12 +32,6 @@
     border: none;    
 }
 
-.icono-add{
-  transform: translateX(12rem);
-  vertical-align: -10px;
-}
-
-
 #spanType{
     position: relative;
     transform: translateX(-10px) translateY(-64px);
@@ -47,8 +40,11 @@
 
 }
 
-
-
+.unidad{
+  transform: translateX(11rem);
+    position: absolute;
+    color: #6493eb;
+}
 
 
 #Rock {
@@ -131,6 +127,7 @@
     cursor: pointer;
     border-bottom: 0.1px;
   }
+  
 
   input[type="range"]::-webkit-slider-runnable-track{
     background-color: #e0e0e0;
@@ -140,7 +137,6 @@
   }
   input[type="range"]::-webkit-slider-thumb{
     background: #6493eb;
-    /* border: 5px solid #6493eb; */
     width: 10px;
     height: 15px;
     margin: -4px 0 0 0;
